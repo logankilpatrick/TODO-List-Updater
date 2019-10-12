@@ -10,7 +10,7 @@ Step 3: copy each line with a #TODO to a TODO.txt
 
 import os
 
-# Pathway to folder I want look through.
+# Pathway to folder I want to look through.
 rootdir = '/Users/chandlerkilpatrick/.julia/dev/SHERPA'
 
 # Pathway to file that is collecting the TODO list.
@@ -22,6 +22,7 @@ TODO_file = open(text_file_location, 'w')
 # All the possible variations to look for.
 possible_TODO = ["#TODO", "# TODO:", "# TODO", "TODO:"]
 
+
 for subdir, dirs, files in os.walk(rootdir):
     
     for file in files:
@@ -29,16 +30,19 @@ for subdir, dirs, files in os.walk(rootdir):
         if str(file).endswith(".jl"):
             
             open_file = open(os.path.join(subdir, file), 'r')
-            
+            line_counter = 0
             for line in open_file:
                 
                 for item in possible_TODO:
                     
                     if line.__contains__(item):
                         line = line.strip()
-                        TODO_file.write(line + "\n")
+                        
+                        TODO_file.write("File Name: " + file + "\n")
+                        TODO_file.write("Line Number: " + str(line_counter) + "\n")
+                        TODO_file.write(line + "\n" + "\n")
                         break
-                    
+                line_counter += 1
                     
             open_file.close()
             

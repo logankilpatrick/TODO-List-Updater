@@ -28,7 +28,7 @@ for subdir, dirs, files in os.walk(rootdir):
     
     for file in files:
         
-        if str(file).endswith(".jl"):
+        if str(file).endswith(".jl"): # All .jl files are opened
             
             open_file = open(os.path.join(subdir, file), 'r')
             line_counter = 0
@@ -37,6 +37,8 @@ for subdir, dirs, files in os.walk(rootdir):
                 for item in possible_TODO:
                     
                     if line.__contains__(item):
+                        # If a line contains any of the possible variations.
+                        # The line is stripped and pasted in the TODO.txt file.
                         line = line.strip()
                         
                         TODO_file.write("File Name: " + file + "\n")
@@ -49,6 +51,7 @@ for subdir, dirs, files in os.walk(rootdir):
             
 
 # end of all for loops
+
 # Prints the last date modified for convenience. 
 TODO_file.write("Last modified: " + str(datetime.datetime.now()))
 # Closes the TODO_file

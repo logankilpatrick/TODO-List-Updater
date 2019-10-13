@@ -1,0 +1,22 @@
+name: UpdateTODO
+
+# on:
+#   schedule:
+#     # * is a special character in YAML so you have to quote this string
+#     - cron:  '*/30 * * * *' 
+    
+on: push #Used for Debug
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    
+    steps:
+    - name: Run check of pwd
+      run: pwd
+    - name: Run check of what's in pwd
+      run: ls
+    - name: Run a one-line script
+      run: python ./TODO-List-Updater/todo_List.py
+      

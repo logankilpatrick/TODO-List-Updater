@@ -9,6 +9,7 @@ Step 3: copy each line with a #TODO to a TODO.txt
 '''
 
 import os
+import datetime
 
 # Pathway to folder I want to look through.
 rootdir = '/Users/chandlerkilpatrick/.julia/dev/SHERPA'
@@ -16,7 +17,7 @@ rootdir = '/Users/chandlerkilpatrick/.julia/dev/SHERPA'
 # Pathway to file that is collecting the TODO list.
 text_file_location = '/Users/chandlerkilpatrick/.julia/dev/SHERPA/TODO.txt'
 
-# 
+# Opens and writes the TODO.txt file.
 TODO_file = open(text_file_location, 'w')
 
 # All the possible variations to look for.
@@ -43,9 +44,12 @@ for subdir, dirs, files in os.walk(rootdir):
                         TODO_file.write(line + "\n" + "\n")
                         break
                 line_counter += 1
-                    
+            # Closes open_file       
             open_file.close()
             
 
 # end of all for loops
+# Prints the last date modified for convenience. 
+TODO_file.write("Last modified: " + str(datetime.datetime.now()))
+# Closes the TODO_file
 TODO_file.close()

@@ -18,5 +18,5 @@ jobs:
     - name: Run check of what's in pwd
       run: ls
     - name: Run a one-line script
-      run: python ./todo_List.py
+      run: python ./.github/workflows/todo_List.py
       

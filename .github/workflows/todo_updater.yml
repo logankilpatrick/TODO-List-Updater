@@ -13,6 +13,7 @@ jobs:
     runs-on: macOS-latest
     
     steps:
+    - uses: actions/checkout@v1
     - name: Run check of pwd
       run: pwd
     - name: Run check of what's in pwd

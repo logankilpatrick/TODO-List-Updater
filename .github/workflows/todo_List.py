@@ -15,7 +15,7 @@ rootdir = os.getcwd()
 # '/Users/chandlerkilpatrick/.julia/dev/SHERPA'
 
 # Pathway to file that is collecting the TODO list.
-text_file_location = rootdir
+text_file_location = rootdir + "/TODO.txt"
 # '/Users/chandlerkilpatrick/.julia/dev/SHERPA/TODO.txt'
 
 # Opens and writes the TODO.txt file.

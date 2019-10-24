@@ -10,10 +10,13 @@ import os
 import datetime
 
 # Pathway to folder I want to look through.
-rootdir = '/Users/chandlerkilpatrick/.julia/dev/SHERPA'
+
+rootdir = os.getcwd()
+# '/Users/chandlerkilpatrick/.julia/dev/SHERPA'
 
 # Pathway to file that is collecting the TODO list.
-text_file_location = '/Users/chandlerkilpatrick/.julia/dev/SHERPA/TODO.txt'
+text_file_location = rootdir
+# '/Users/chandlerkilpatrick/.julia/dev/SHERPA/TODO.txt'
 
 # Opens and writes the TODO.txt file.
 TODO_file = open(text_file_location, 'w')

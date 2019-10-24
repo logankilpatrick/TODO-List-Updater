@@ -27,7 +27,7 @@ jobs:
     - name: commit changed files
       run: git commit -m "Auto updating TODO.txt"
     - name: push code to master
-      run: git push origin master
+      run: git push origin HEAD:master
     - name: username
       run: logankilpatrick 
     - name: password

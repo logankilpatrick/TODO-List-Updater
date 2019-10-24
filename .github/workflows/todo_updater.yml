@@ -20,6 +20,8 @@ jobs:
       run: ls
     - name: Run a one-line script
       run: python ./.github/workflows/todo_List.py
+    - name: switching from HTTPS to SSH
+      run: git remote set-url origin ${{ secrets.ssh }}
     - name: check for changes
       run: git status
     - name: stage changed files
@@ -28,8 +30,5 @@ jobs:
       run: git commit -m "Auto updating TODO.txt"
     - name: push code to master
       run: git push origin HEAD:master
-    - name: username
-      run: logankilpatrick 
-    - name: password
-      run: ${{ secrets.password }}        
+      
       

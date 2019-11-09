@@ -1,11 +1,17 @@
 name: UpdateTODO
 
-on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '0 0 1 1 *' 
+# on:
+#   schedule:
+#     # * is a special character in YAML so you have to quote this string
+#     - cron:  '0 0 1 1 *' 
     
-# on: push #Used for Debug
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/*'
+
 
 jobs:
   build:

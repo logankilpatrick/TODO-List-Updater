@@ -31,7 +31,7 @@ jobs:
     - name: fetch from master
       run: git fetch origin master
     - name: push code to master
-      if: GITHUB_ACTOR == "logankilpatrick"
+      if: GITHUB_ACTOR=='logankilpatrick'
       run: git push origin HEAD:master
     
       

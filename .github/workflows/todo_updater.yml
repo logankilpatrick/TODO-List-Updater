@@ -6,17 +6,13 @@ name: UpdateTODO
 #     - cron:  '0 0 1 1 *' 
     
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - '.github/**'
+  [push]
 
 
 jobs:
   build:
 
-    runs-on: macOS-latest
+    runs-on: macos-latest
     
     steps:
     - uses: actions/checkout@v1
